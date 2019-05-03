@@ -1,0 +1,51 @@
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="view_schedule_tree">
+		     <field name="name">schedule.tree</field>
+		     <field name="model">iut.schedule</field>
+		     <field name="priority">1</field>
+		     <field name="arch" type="xml">
+	    		<tree string="Agenda">
+	         		<field name="date_start"/>
+          			<field name="date_stop"/>
+	          		<field name="room"/>
+	          		<field name="class_id"/>
+	          		<field name="course_id"/>
+	        	</tree>
+			</field>
+	    </record>
+	    
+	    <record model="ir.ui.view" id="view_schedule_form">
+		     <field name="name">schedule.form</field>
+		     <field name="model">iut.schedule</field>
+		     <field name="arch" type="xml">
+	    		<form>
+	        		<header>
+	        			
+	        		</header>
+	        		<sheet>
+	        			<group>
+	        				<group>
+	        					<field name="date_start"/>
+          						<field name="date_stop"/>
+	          					<field name="room"/>
+	        				</group>
+	        				<group>
+	        					<field name="class_id"/>
+	          					<field name="course_id"/>
+	        				</group>
+	        			</group>
+	        		</sheet>
+	        	</form>
+	        </field>
+	    </record>
+	    
+		<record id="schedule_action" model="ir.actions.act_window">
+			<field name="name">Agenda</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">iut.schedule</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+	</data>
+</odoo>
